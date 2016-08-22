@@ -21,33 +21,36 @@ Chat:
         <div id="aqchat_iframe" style="background:#f2f2f2; height:440px;width:360px;position:fixed;bottom:0;right:0;border:#666 solid 1px;margin:8px 8px 0px 8px;border-radius:4px;display:none" />
 
 <!-- end of container -->
-	
 <!--Start of Chat Script-->
 <script type='text/javascript'>
-	var _tt_pac_conf = {
-		type:"reactive",
-		elementId:"elementId",
-		showChatTime:true,
-		isVoiceCall:false,
-		withChat:false,
-		isAutoPrepend:false,
-		showEstWaitTime:true,
-		wwwURL:"",
-		isOnlineDefault:true,
-		activeBtnUrl:"https%3A%2F%2Fsce1.humanify.com%2Fproactivechatconf%2Fimages%2Fonstate_chatme.gif",
-		enableRoutingQuery:true,
-		timer:false
-	};
+            var _tt_pac_conf = {
+                        type:"reactive",
+                        elementId:"aqchat",
+                        showChatTime:true,
+                        isVoiceCall:false,
+                        withChat:false,
+                        isAutoPrepend:false,
+                        showEstWaitTime:true,
+                        wwwURL:"",
+                        isOnlineDefault:false,
+                        activeBtnUrl:"%2Faq360_sqa%2Fimg%2Fbutton%2Fonline%2Fchat.png",
+                        enableRoutingQuery:true,
+                        timer:false
+            };
 //download script
 (function() {
-	var se = document.createElement('script');se.type = 'text/javascript';
-	se.async = true;se.id = "installationScript";var scriptUrl = "https://sce1.humanify.com";
-	se.src = scriptUrl+"/proactivechat/js/proactivechat.js?key=fordmex|FordSCE1|sales";
-	var s = document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(se, s);
+            var se = document.createElement('script');se.type = 'text/javascript';
+            se.async = true;se.id = "installationScript";var scriptUrl = "https://sce1.humanify.com";
+            se.src = scriptUrl+"/proactivechat/js/proactivechat.js?key=aq360_sqa|AQ360_Chat1|chat_main";
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(se, s);
 })();
 </script>
 <!--End of Chat Script-->
+
+
+
+
 
 <script language="JavaScript" src="//tracking.dsmmadvantage.com/Clients/AxtelAq360/webmetro_dsmmtracker.js"></script>   
 
@@ -76,6 +79,9 @@ _pac_visitor_infoString=_pac_visitor_infoString.replace("}]","}");
 			});
 
 </script>
+
+
+
 
 </body>
 
