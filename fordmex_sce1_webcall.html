@@ -1,15 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" >
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Fordmex WebChat Test Page</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--<link href="style.css" rel="stylesheet" type="text/css" / -->
-</head>
-<body>
-        <h1>Fordmex Reactive WebChat Test Page</h1>
-        <div id="elementId"></div>
-		<input type="hidden" name="_pac_visitor_info" id="_pac_visitor_info" value='{"name" : "Customer FullName","enrollmentDate" : "10/1/2007","membershipType" : "online","info_height" : "175","info_weight" : "140","info_diet" : "glutenfree","info_goal" : "120 Lbs"}' />
-    </body>
+<!DOCTYPE html>
+<html>
+    <head>
+	    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>   
+
+    </head>
+
+    <body>
+
+
+        <h1>Contacto!</h1>
+        <h2>Estamos disponibles 24/7 por email, chat o voz.</h2>
+        <p>Llomenos al 1-800-555-6666.</p>
+		<p> This is the AQ Client Pools number : <div class='acq_phone_number'><noscript>1-XXX-XXX-XXXX</noscript></div></p>
+        <p>Nuestro email es info@xyzcorp.com.</p>
+<br>
+        <p>Para iniciar una sesion de chat con uno de nuestros asociados, haga clic en el boton.</p>
+Chat:        
+		<div id="aqchat"></div>		
+		<input type="hidden" name="_pac_visitor_info" id="_pac_visitor_info" value='{"info_system" : "0","info_ip" : "0","info_visitorCookie" : "0"}' />
+        <div id="aqchat_iframe" style="background:#f2f2f2; height:440px;width:360px;position:fixed;bottom:0;right:0;border:#666 solid 1px;margin:8px 8px 0px 8px;border-radius:4px;display:none" />
+
+<!-- end of container -->
 	
 <!--Start of Chat Script-->
 <script type='text/javascript'>
@@ -37,5 +48,35 @@
 })();
 </script>
 <!--End of Chat Script-->
+
+<script language="JavaScript" src="//tracking.dsmmadvantage.com/Clients/AxtelAq360/webmetro_dsmmtracker.js"></script>   
+
+<script language="JavaScript" >
+
+function Update_Hidden_pac_visitor_info()
+{
+var _pac_visitor_info = document.getElementById("_pac_visitor_info").value;
+//alert(_pac_visitor_info);
+_pac_visitor_info=_pac_visitor_info.replace("{","[{");
+_pac_visitor_info=_pac_visitor_info.replace("}","}]");
+ var _pac_visitor_infoJSON= JSON.parse(_pac_visitor_info);
+_pac_visitor_infoJSON[0]["info_system"]='0';
+_pac_visitor_infoJSON[0]["info_ip"]='0.0.0.0';
+_pac_visitor_infoJSON[0]["info_visitorCookie"]=wm_DSMM_getCookie("ACQ_Visitor_Id");
+var _pac_visitor_infoString =String(JSON.stringify(_pac_visitor_infoJSON));
+_pac_visitor_infoString=_pac_visitor_infoString.replace("[{","{");
+_pac_visitor_infoString=_pac_visitor_infoString.replace("}]","}");
+ document.getElementById('_pac_visitor_info').value=_pac_visitor_infoString;
+ alert("After setting the value: "  + document.getElementById("_pac_visitor_info").value);
+}
+</script>   
+<script language="JavaScript" >
+			$(document).ready(function(){
+			Update_Hidden_pac_visitor_info();
+			});
+
+</script>
+
+</body>
 
 </html>
